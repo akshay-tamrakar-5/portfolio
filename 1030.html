@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Akshay Tamrakar · Portfolio</title>
+
+    <style>
+        /* ---------- RESET & BASE (White Theme) ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            color: #1a1a2e;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        /* ---------- PROFILE / BIO SECTION (Creative) ---------- */
+        .profile {
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 40px 45px;
+            margin-bottom: 45px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Creative gradient accent */
+        .profile::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f09433, #e6683c, #dc2743, #bc1888);
+        }
+
+        .profile-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 18px;
+        }
+
+        /* ---------- CREATIVE NAME STYLING ---------- */
+        .profile-name .name-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .profile-name .name-deco-left,
+        .profile-name .name-deco-right {
+            font-size: 1.4rem;
+            color: #bc1888;
+            opacity: 0.6;
+            font-weight: 300;
+        }
+
+        .profile-name h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: #1a1a2e;
+            line-height: 1.1;
+            margin: 0;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .profile-name .first-name {
+            background: linear-gradient(135deg, #1a1a2e, #4b5563);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .profile-name .last-name {
+            background: linear-gradient(135deg, #f09433, #bc1888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        /* Creative underline for last name */
+        .profile-name .last-name::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #f09433, #bc1888);
+            border-radius: 4px;
+            opacity: 0.5;
+        }
+
+        /* ---------- NEW TITLE STYLING ---------- */
+        .profile-name .title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #4b5563;
+            margin-top: 6px;
+            letter-spacing: 0.5px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .profile-name .title-role {
+            padding: 4px 16px;
+            border-radius: 50px;
+            background: #f0f2f5;
+            font-weight: 600;
+            color: #1a1a2e;
+            font-size: 1.1rem;
+        }
+
+        .profile-name .title-role.highlight {
+            background: linear-gradient(135deg, #f09433, #bc1888);
+            color: white;
+            box-shadow: 0 4px 16px rgba(188, 24, 136, 0.25);
+        }
+
+        .profile-name .title-amp {
+            font-weight: 700;
+            color: #bc1888;
+            font-size: 1.2rem;
+        }
+
+        /* ---------- TAGLINE ---------- */
+        .profile-name .tagline {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: #9ca3af;
+            letter-spacing: 2px;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .profile-name .tagline .dot {
+            color: #bc1888;
+            font-size: 0.5rem;
+        }
+
+        /* ---------- CONTACT ---------- */
+        .profile-contact {
+            text-align: right;
+            font-size: 0.95rem;
+            color: #4b5563;
+            line-height: 1.8;
+            background: #f8fafc;
+            padding: 12px 24px;
+            border-radius: 16px;
+            border: 1px solid #eef2f6;
+            min-width: 200px;
+        }
+
+        .profile-contact .label {
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        .profile-contact a {
+            color: #bc1888;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .profile-contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* ---------- SUMMARY ---------- */
+        .profile-summary {
+            margin-top: 18px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f2f5;
+        }
+
+        .profile-summary h3 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #9ca3af;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .profile-summary p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #374151;
+            font-weight: 400;
+        }
+
+        .profile-summary p .highlight-text {
+            background: linear-gradient(135deg, #f09433, #bc1888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        /* ---------- CREATIVE BADGE ---------- */
+        .creative-badge {
+            display: inline-block;
+            margin-top: 14px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 20px;
+            border-radius: 100px;
+            background: linear-gradient(135deg, #f09433, #bc1888);
+            color: white;
+            border: none;
+        }
+
+        /* ---------- DIVIDER ---------- */
+        .section-divider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin: 10px 0 30px;
+        }
+        .section-divider .line {
+            flex: 1;
+            max-width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d1d5db, transparent);
+        }
+        .section-divider .diamond {
+            color: #bc1888;
+            font-size: 1.2rem;
+        }
+
+        /* ---------- HEADER ---------- */
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .header h2 span {
+            background: linear-gradient(135deg, #f09433, #bc1888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: #6b7280;
+            font-size: 1rem;
+            margin-top: 4px;
+            font-weight: 300;
+        }
+
+        /* ---------- FILTER BUTTONS ---------- */
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
+
+        .filters button {
+            padding: 10px 28px;
+            border: 2px solid #e5e7eb;
+            border-radius: 50px;
+            background: #ffffff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4b5563;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .filters button:hover {
+            border-color: #bc1888;
+            color: #bc1888;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(188, 24, 136, 0.1);
+        }
+
+        .filters button.active {
+            background: linear-gradient(135deg, #f09433, #bc1888);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 6px 24px rgba(188, 24, 136, 0.25);
+        }
+
+        /* ---------- POST GRID ---------- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        /* ---------- POST CARD ---------- */
+        .post-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .post-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.10);
+            border-color: rgba(188, 24, 136, 0.15);
+        }
+
+        .post-card .embed-wrap {
+            position: relative;
+            padding-bottom: 100%;
+            height: 0;
+            background: #f0f2f5;
+            overflow: hidden;
+        }
+
+        .post-card .embed-wrap iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .post-card .info {
+            padding: 16px 20px 20px;
+            border-top: 1px solid #f0f2f5;
+        }
+
+        .post-card .info .account-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 4px 14px;
+            border-radius: 50px;
+            background: #f0f2f5;
+            color: #4b5563;
+            margin-bottom: 8px;
+        }
+
+        .post-card .info .account-tag.tag-1 { background: #fef3c7; color: #b45309; }
+        .post-card .info .account-tag.tag-2 { background: #dbeafe; color: #1d4ed8; }
+        .post-card .info .account-tag.tag-3 { background: #d1fae5; color: #065f46; }
+        .post-card .info .account-tag.tag-4 { background: #fce4ec; color: #be185d; }
+        .post-card .info .account-tag.tag-5 { background: #ede9fe; color: #6d28d9; }
+
+        .post-card .info .caption {
+            font-size: 0.92rem;
+            color: #1f2937;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        .post-card .info .caption span {
+            font-weight: 600;
+            color: #111827;
+        }
+
+        /* ---------- LIGHTBOX ---------- */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.show {
+            display: flex;
+        }
+
+        .lightbox .lb-content {
+            background: #ffffff;
+            border-radius: 28px;
+            max-width: 620px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 24px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .lightbox .lb-content iframe {
+            width: 100%;
+            height: 520px;
+            border: none;
+            border-radius: 16px;
+            background: #f0f2f5;
+        }
+
+        .lightbox .lb-close {
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            font-size: 2.2rem;
+            cursor: pointer;
+            color: #4b5563;
+            transition: 0.2s;
+            background: none;
+            border: none;
+            line-height: 1;
+        }
+
+        .lightbox .lb-close:hover {
+            transform: rotate(90deg);
+            color: #1a1a2e;
+        }
+
+        .lightbox .lb-caption {
+            margin-top: 16px;
+            font-size: 1rem;
+            color: #1f2937;
+            padding: 0 4px;
+            font-weight: 500;
+        }
+
+        .lightbox .lb-account {
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-top: 4px;
+            padding: 0 4px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.96); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* ---------- NO POSTS ---------- */
+        .no-posts {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+            color: #9ca3af;
+            font-size: 1.1rem;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+
+        /* ---------- FOOTER ---------- */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #e5e7eb;
+            color: #9ca3af;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .footer .heart {
+            color: #dc2743;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 768px) {
+            .profile { padding: 28px 24px; }
+            .profile-top { flex-direction: column; align-items: center; text-align: center; }
+            .profile-contact { text-align: center; width: 100%; }
+            .profile-name h1 { font-size: 2.4rem; gap: 6px; }
+            .profile-name .name-wrapper { gap: 8px; justify-content: center; }
+            .profile-name .name-deco-left,
+            .profile-name .name-deco-right { font-size: 1rem; }
+            .profile-name .title { font-size: 1rem; justify-content: center; }
+            .profile-name .title-role { font-size: 0.9rem; padding: 3px 12px; }
+            .profile-name .tagline { justify-content: center; font-size: 0.75rem; }
+            .header h2 { font-size: 1.8rem; }
+            .grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+            .filters button { padding: 8px 18px; font-size: 0.8rem; }
+            .lightbox .lb-content iframe { height: 400px; }
+            .lightbox .lb-content { padding: 16px; }
+        }
+
+        @media (max-width: 480px) {
+            .grid { grid-template-columns: 1fr; }
+            .profile-name h1 { font-size: 1.8rem; }
+            .profile-summary p { font-size: 0.95rem; }
+            .header h2 { font-size: 1.5rem; }
+            .lightbox .lb-content iframe { height: 350px; }
+            .profile-name .title { font-size: 0.85rem; gap: 4px; }
+            .profile-name .title-role { font-size: 0.75rem; padding: 2px 10px; }
+            .profile-name .tagline { font-size: 0.7rem; gap: 6px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- ========================================================= -->
+        <!-- PROFILE / BIO SECTION (Akshay Tamrakar)                    -->
+        <!-- ========================================================= -->
+        <div class="profile">
+            <div class="profile-top">
+                <div class="profile-name">
+                    <!-- CREATIVE NAME -->
+                    <div class="name-wrapper">
+                        <h1>
+                            <span class="first-name">Akshay</span>
+                            <span class="last-name">Tamrakar</span>
+                        </h1>
+                    </div>
+                    
+                    <!-- NEW TITLE -->
+                    <div class="title">
+                        <span >Web Developer</span>
+                        <span >&</span>
+                        <span >Graphic Designer</span>
+                    </div>
+                    
+                    <!-- TAGLINE -->
+                    <div class="tagline">
+                        <span class="dot">●</span> 
+                        Building Digital Experiences 
+                        <span class="dot">●</span>
+                    </div>
+                </div>
+                
+                <div class="profile-contact">
+                    <div><span class="label">✉</span> <a href="mailto:akshay.tamrakar.se@gmail.com">akshay.tamrakar.se@gmail.com</a></div>
+                    <div><span class="label">✆</span> <a href="tel:+919839485560">+91 883-948-5560</a></div>
+                    <div><span class="label">◉</span> Gurgaon, India</div>
+                </div>
+            </div>
+
+            <div class="profile-summary">
+                <h3>✦ Professional Summary</h3>
+                <p>
+                    A highly skilled and results-driven <span class="highlight-text">Web Developer & Graphic Designer</span> 
+                    with over <strong>7+ years</strong> of experience in the tech industry, including 
+                    <strong>5+ years</strong> of expertise in coding and design. Proficient in backend development, 
+                    cloud operations, API engineering, Android development, and IT infrastructure management. 
+                    Adept at building <span class="highlight-text">scalable, secure, and performance-optimized</span> 
+                    web applications. Experienced in using modern technologies such as 
+                    <strong>PHP 8, MySQL, Laravel, CodeIgniter,</strong> and frontend tools to deliver 
+                    high-quality solutions. Known for managing healthcare CRMs, enterprise dashboards, 
+                    and cloud-based ERP systems. Strong problem-solving skills and a commitment to 
+                    delivering exceptional digital products for clients worldwide.
+                </p>
+                <div class="creative-badge">✦ Code · Design · Innovate ✦</div>
+            </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- PORTFOLIO GALLERY SECTION                                  -->
+        <!-- ========================================================= -->
+        <div class="section-divider">
+            <span class="line"></span>
+            <span class="diamond">◆</span>
+            <span class="line"></span>
+        </div>
+
+        <div class="header">
+            <h2>My <span>Portfolio</span> Feed</h2>
+            <p>Selected design & development works from my Instagram accounts</p>
+        </div>
+
+        <!-- FILTER BUTTONS -->
+        <div class="filters" id="filterButtons">
+            <!-- Buttons will be auto-generated from data -->
+        </div>
+
+        <!-- POST GRID -->
+        <div class="grid" id="postGrid"></div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <span class="heart">❤</span> Designed & Developed by Akshay Tamrakar <span class="heart">❤</span>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <div class="lb-content">
+            <button class="lb-close" id="lbClose">✕</button>
+            <div id="lbIframeWrap"></div>
+            <div class="lb-caption" id="lbCaption"></div>
+            <div class="lb-account" id="lbAccount"></div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        // 🔹 STEP 1: APNI POSTS YAHAN DAALEIN (20 posts already added)
+        // Post ID kaise nikale? Instagram post ke link se:
+        // https://www.instagram.com/p/CxYz123AbC/  →  ID = "CxYz123AbC"
+        // ============================================================
+        const posts = [
+            // ---- Account 1: @anshuwebsolutions ----
+            {
+                id: "C9sGIiuPnTe",
+                account: "anshuwebsolutions",
+                accountLabel: "@anshuwebsolutions",
+                caption: "Web design project for a startup",
+                tagClass: "tag-1"
+            },
+            {
+                id: "C-AFE3NNtzp",
+                account: "anshuwebsolutions",
+                accountLabel: "@anshuwebsolutions",
+                caption: "UI/UX case study",
+                tagClass: "tag-1"
+            },
+            {
+                id: "C-M04C7PrQH",
+                account: "anshuwebsolutions",
+                accountLabel: "@anshuwebsolutions",
+                caption: "UI/UX case study",
+                tagClass: "tag-1"
+            },
+            {
+                id: "DD6W2DWv6j8",
+                account: "anshuwebsolutions",
+                accountLabel: "@anshuwebsolutions",
+                caption: "UI/UX case study",
+                tagClass: "tag-1"
+            },
+            // ---- Account 2: @digitiria ----
+            {
+                id: "CoRfGezJ_FI",
+                account: "digitiria",
+                accountLabel: "@digitiria",
+                caption: "Social media campaign design",
+                tagClass: "tag-2"
+            },
+            {
+                id: "C36tu4OSNiH",
+                account: "digitiria",
+                accountLabel: "@digitiria",
+                caption: "Brand identity for digital agency",
+                tagClass: "tag-2"
+            },
+            {
+                id: "C4SvWDwJklQ",
+                account: "digitiria",
+                accountLabel: "@digitiria",
+                caption: "Brand identity for digital agency",
+                tagClass: "tag-2"
+            },
+            {
+                id: "C5NBB-5S3XP",
+                account: "digitiria",
+                accountLabel: "@digitiria",
+                caption: "Brand identity for digital agency",
+                tagClass: "tag-2"
+            },
+            // ---- Account 3: @evogroom.in ----
+            {
+                id: "DLe5VXdz_wl",
+                account: "evogroom.in",
+                accountLabel: "@evogroom.in",
+                caption: "Product packaging design",
+                tagClass: "tag-3"
+            },
+            {
+                id: "C-csRLcTlE6",
+                account: "evogroom.in",
+                accountLabel: "@evogroom.in",
+                caption: "Grooming brand visual identity",
+                tagClass: "tag-3"
+            },
+            {
+                id: "C-VSmJVzWqY",
+                account: "evogroom.in",
+                accountLabel: "@evogroom.in",
+                caption: "Grooming brand visual identity",
+                tagClass: "tag-3"
+            },
+            {
+                id: "C32oHswRV5W",
+                account: "evogroom.in",
+                accountLabel: "@evogroom.in",
+                caption: "Grooming brand visual identity",
+                tagClass: "tag-3"
+            },
+            // ---- Account 4: @moonvibe.in ----
+            {
+                id: "DWHOLPeDgKY",
+                account: "moonvibe.in",
+                accountLabel: "@moonvibe.in",
+                caption: "Aesthetic poster collection",
+                tagClass: "tag-4"
+            },
+            {
+                id: "DQCeeQXAfiJ",
+                account: "moonvibe.in",
+                accountLabel: "@moonvibe.in",
+                caption: "Minimalist branding",
+                tagClass: "tag-4"
+            },
+            {
+                id: "DPE5SFgjfs6",
+                account: "moonvibe.in",
+                accountLabel: "@moonvibe.in",
+                caption: "Minimalist branding",
+                tagClass: "tag-4"
+            },
+            {
+                id: "DPS6ipBiE2W",
+                account: "moonvibe.in",
+                accountLabel: "@moonvibe.in",
+                caption: "Minimalist branding",
+                tagClass: "tag-4"
+            },
+            // ---- Account 5: @gotohosp ----
+            {
+                id: "DZKdLmahZvX",
+                account: "gotohosp",
+                accountLabel: "@gotohosp",
+                caption: "Healthcare app design",
+                tagClass: "tag-5"
+            },
+            {
+                id: "DZRbR95hNAv",
+                account: "gotohosp",
+                accountLabel: "@gotohosp",
+                caption: "Clinic management dashboard",
+                tagClass: "tag-5"
+            },
+            {
+                id: "DZUzAF7BgSb",
+                account: "gotohosp",
+                accountLabel: "@gotohosp",
+                caption: "Clinic management dashboard",
+                tagClass: "tag-5"
+            },
+            {
+                id: "DZrB-PrvW5E",
+                account: "gotohosp",
+                accountLabel: "@gotohosp",
+                caption: "Clinic management dashboard",
+                tagClass: "tag-5"
+            }
+        ];
+
+        // ============================================================
+        // 🔹 STEP 2: CODE - ISME KUCH MAT BADALNA
+        // ============================================================
+
+        const grid = document.getElementById('postGrid');
+        const filterContainer = document.getElementById('filterButtons');
+        const lightbox = document.getElementById('lightbox');
+        const lbIframeWrap = document.getElementById('lbIframeWrap');
+        const lbCaption = document.getElementById('lbCaption');
+        const lbAccount = document.getElementById('lbAccount');
+        const lbClose = document.getElementById('lbClose');
+
+        // --- Generate filter buttons dynamically ---
+        const accounts = ['all', ...new Set(posts.map(p => p.account))];
+        accounts.forEach(acc => {
+            const btn = document.createElement('button');
+            btn.dataset.filter = acc;
+            const label = acc === 'all' ? '✨ All' : posts.find(p => p.account === acc).accountLabel;
+            btn.textContent = label;
+            if (acc === 'all') btn.classList.add('active');
+            filterContainer.appendChild(btn);
+        });
+
+        // --- Render posts ---
+        function renderPosts(filter) {
+            grid.innerHTML = '';
+            const filtered = filter === 'all' ? posts : posts.filter(p => p.account === filter);
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="no-posts">No posts available for this account.</div>`;
+                return;
+            }
+
+            filtered.forEach(post => {
+                const card = document.createElement('div');
+                card.className = 'post-card';
+
+                // Embed wrapper
+                const wrap = document.createElement('div');
+                wrap.className = 'embed-wrap';
+                const iframe = document.createElement('iframe');
+                iframe.src = `https://www.instagram.com/p/${post.id}/embed`;
+                iframe.loading = 'lazy';
+                iframe.allowFullscreen = true;
+                wrap.appendChild(iframe);
+                card.appendChild(wrap);
+
+                // Info
+                const info = document.createElement('div');
+                info.className = 'info';
+
+                const tag = document.createElement('span');
+                tag.className = `account-tag ${post.tagClass}`;
+                tag.textContent = post.accountLabel;
+                info.appendChild(tag);
+
+                const captionP = document.createElement('p');
+                captionP.className = 'caption';
+                captionP.innerHTML = `<span>📌</span> ${post.caption}`;
+                info.appendChild(captionP);
+
+                card.appendChild(info);
+
+                // Click → Lightbox
+                card.addEventListener('click', () => {
+                    openLightbox(post);
+                });
+
+                grid.appendChild(card);
+            });
+        }
+
+        // --- Lightbox ---
+        function openLightbox(post) {
+            lbIframeWrap.innerHTML = `
+                <iframe src="https://www.instagram.com/p/${post.id}/embed" 
+                        allowfullscreen loading="lazy"></iframe>
+            `;
+            lbCaption.textContent = post.caption;
+            lbAccount.textContent = post.accountLabel;
+            lightbox.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('show');
+            document.body.style.overflow = '';
+            lbIframeWrap.innerHTML = '';
+        }
+
+        lbClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // --- Filter logic ---
+        filterContainer.addEventListener('click', (e) => {
+            if (e.target.tagName !== 'BUTTON') return;
+            const filter = e.target.dataset.filter;
+            document.querySelectorAll('.filters button').forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            renderPosts(filter);
+        });
+
+        // --- Initial render ---
+        renderPosts('all');
+
+        console.log('✅ Portfolio loaded! Total posts:', posts.length);
+        console.log('📢 Accounts:', [...new Set(posts.map(p => p.account))]);
+        console.log('👤 Akshay Tamrakar · Web Developer & Graphic Designer');
+    </script>
+
+</body>
+</html>
